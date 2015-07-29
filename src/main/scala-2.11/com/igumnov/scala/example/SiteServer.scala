@@ -1,8 +1,6 @@
 package com.igumnov.scala.example
 
-
 import java.util.Calendar
-
 import com.igumnov.scala._
 import com.igumnov.scala.webserver.User
 
