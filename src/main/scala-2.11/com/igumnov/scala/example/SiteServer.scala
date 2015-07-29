@@ -26,7 +26,6 @@ object SiteServer {
     WebServer.addClassPathHandler("/static", "META-INF/resources/webjars")
     WebServer.addAllowRule("/js/*")
     WebServer.addStaticContentHandler("/js", "javascript")
-    val user = new ExampleUser
 
 
     WebServer.locale(Map("en" -> "locale/messages_en.properties"),  (rq,rs)=>{
