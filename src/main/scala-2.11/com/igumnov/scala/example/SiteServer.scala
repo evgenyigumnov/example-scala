@@ -33,6 +33,8 @@ object SiteServer {
     })
 
 
+    WebServer.templates("pages",0)
+
     WebServer.addController("/", (rq, rs,model) => {
       model += "time" -> Calendar.getInstance.getTime
       "index"
@@ -43,7 +45,6 @@ object SiteServer {
       "login"
     })
 
-    WebServer.templates("pages",0)
 
     WebServer.addRestController[ExampleUser]("/rest/user", (rq, rs, obj) => {
       rq.getMethod match {
