@@ -13,11 +13,7 @@ object SiteServer {
 
     WebServer.loginService((name) => {
       val user = ORM.findOne[ExampleUser](name)
-      if (user.isDefined) {
-        Option(new User(user.get.userName, user.get.userPassword, Array[String]("user_role")))
-      } else {
-        Option(null)
-      }
+      user.map(u => new User(u.userName, u.userPassword, Array("user_role")))
     })
 
     WebServer.securityPages("/login", "/login?error=1", "/logout")
